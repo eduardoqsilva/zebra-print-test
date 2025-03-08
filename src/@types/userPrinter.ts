@@ -26,24 +26,22 @@ export function usePrinter() {
     );
   }, []);
 
-  const sendImageToPrinter = (imageUrl: string) => {
+  const sendImageToPrinter = (imageUrl: string, quantity: number) => {
     if (!printer) {
       setError("Nenhuma impressora conectada.");
       return;
     }
-
-    if (!window.BrowserPrint.convertAndSendFile) {
-      setError("Função convertAndSendFile não encontrada.");
-      return;
-    }
-
-    window.BrowserPrint.convertAndSendFile(
+  
+    printer.sendFile?.(
       imageUrl,
-      () => console.log("Imagem enviada com sucesso!"),
-      (err: string) => setError(`Erro ao imprimir imagem: ${err}`),
-      { toFormat: "zpl", action: "print" }
+      () => {
+        console.log(`Imagem enviada com sucesso! (${quantity} cópias)`);
+        printer.send(`^XA\n^PQ${quantity}\n^XZ`); // Define a quantidade de cópias
+      },
+      (err: string) => setError(`Erro ao imprimir imagem: ${err}`)
     );
   };
+  
 
   return { printer, sendImageToPrinter, error };
 }

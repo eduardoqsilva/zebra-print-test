@@ -19,11 +19,11 @@ export const Printer: React.FC = () => {
       <br />
       <button
         type='button'
-        onClick={() => sendImageToPrinter(imageUrl)}
+        onClick={() => sendImageToPrinter(imageUrl, 2)}
         style={{ marginTop: '10px' }}
         className='px-3 py-2 bg-blue-500 rounded-md'
       >
-        Imprimir Imagem de Teste
+        Imprimir Imagem de Teste 2 vezes
       </button>
     </div>
   )
