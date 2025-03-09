@@ -1,10 +1,10 @@
 import type React from 'react'
-import { usePrinter } from '../@types/userPrinter'
+import { usePrinter } from '../hooks/userPrinter'
 
 export const Printer: React.FC = () => {
-  const { sendImageToPrinter, error } = usePrinter()
+  const { printImage, error } = usePrinter()
 
-  const imageUrl = 'https://picsum.photos/300/150' // URL da imagem de teste
+  const imageUrl = 'https://picsum.photos/334/200' // URL da imagem de teste
 
   return (
     <div>
@@ -19,9 +19,9 @@ export const Printer: React.FC = () => {
       <br />
       <button
         type='button'
-        onClick={() => sendImageToPrinter(imageUrl, 2)}
+        onClick={() => printImage(imageUrl, 2)}
         style={{ marginTop: '10px' }}
-        className='px-3 py-2 bg-blue-500 rounded-md'
+        className='px-3 py-2 bg-blue-500 rounded-md text-white font-medium'
       >
         Imprimir Imagem de Teste 2 vezes
       </button>
