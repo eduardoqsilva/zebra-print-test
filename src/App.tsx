@@ -43,7 +43,7 @@ function App() {
       <Printer />
       <hr />
       <h1 className="text-2xl font-medium">Teste etiquetas html e css impressora zebra</h1>
-      <div className="border-1 border-neutral-500 rounded-xl shadow-xl">
+      <div className="border-1 border-neutral-500 rounded-xl shadow-xl p-2">
         <LabelPrint ref={labelPrint} />
       </div>
       <button

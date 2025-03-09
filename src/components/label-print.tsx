@@ -8,7 +8,7 @@ export function LabelPrint({
   return (
     <div
       ref={ref}
-      className="w-[332px] aspect-[5/4] p-2 font-sans flex flex-col gap-1"
+      className="w-[332px] h-[265px] font-sans flex flex-col gap-1"
     >
       <div className="border-b border-neutral-400 pb-1 h-[49px]">
         <h1 className="uppercase font-medium text-base">
@@ -31,7 +31,7 @@ export function LabelPrint({
           <img src={barCode} alt="" />
         </div>
       </div>
-      <div className="border-b border-neutral-400 pb-1 flex gap-2 text-base font-bold h-[29px]">
+      <div className="border-b border-neutral-400 pb-1 flex items-end gap-2 text-base font-bold h-[37px]">
         <h2>Entrega:______</h2>
         <h2>Volume:______</h2>
       </div>
