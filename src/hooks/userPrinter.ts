@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
-type PrintOptions = {
-  toFormat?: string
-  fromFormat?: string
-  featureKey?: string
-}
+// type PrintOptions = {
+//   toFormat?: string
+//   fromFormat?: string
+//   featureKey?: string
+// }
 
 type PrinterDevice = {
   name: string
@@ -43,7 +43,7 @@ export function usePrinter() {
           imageUrl,
           { toFormat: 'zpl' },
           () => console.log(`Imagem impressa com sucesso! Cópia ${i + 1} de ${quantity}`),
-          (err) => setError(`Erro ao imprimir: ${err}`)
+          (err: unknown) => setError(`Erro ao imprimir: ${err}`)
         )
       }
     } catch (err) {
